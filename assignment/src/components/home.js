@@ -10,7 +10,7 @@ function Home() {
 
     return (
         <>
-            <button onClick={() => setSheet(true)}>Open Bottom Sheet</button>
+            <button className='model-btn' onClick={() => setSheet(true)}>Open Bottom Sheet</button>
             {sheet && <BottomSheet closeModal={closeModal} />}
         </>
     )
