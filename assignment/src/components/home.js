@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
+import BottomSheet from './bottomsheet';
 
 function Home() {
     const [sheet, setSheet] = useState(false);
 
-    const MySheet = () => {
-        return (
-            <>
-                <h2>Bottom Sheet</h2>
-
-                <button onClick={() => setSheet(false)}>Close</button>
-            </>
-        )
+    const closeModal = () => {
+        setSheet(false)
     }
+
     return (
         <>
             <button onClick={() => setSheet(true)}>Open Bottom Sheet</button>
+            {sheet && <BottomSheet closeModal={closeModal} />}
         </>
     )
 }
